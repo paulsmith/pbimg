@@ -15,4 +15,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Compile Swift Code
       run: |
-        swiftc pbimg.swift
+        swift build
+    - name: Test Swift Code
+      run: |
+        swift test
