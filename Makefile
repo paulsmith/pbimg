@@ -1,5 +1,10 @@
-pbimg: Sources/main.swift
+all: build
+
+build:
 	swift build
+
+release-build:
+	swift build -c release
 
 test:
 	swift test

@@ -96,7 +96,7 @@ pbimg | identify -
 pbimg | curl --data-binary @- https://example.com/upload
 ```
 
-## Credit
+## Acknowledgements
 
 [Simon Willison](https://til.simonwillison.net/macos/impaste) for the idea.
 
