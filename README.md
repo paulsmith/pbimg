@@ -1,5 +1,7 @@
 # pbimg - Clipboard image saver
 
+[![CI](https://github.com/paulsmith/pbimg/actions/workflows/ci.yml/badge.svg)](https://github.com/paulsmith/pbimg/actions/workflows/ci.yml)
+
 A command-line application for macOS that saves the clipboard image to a file or
 outputs the raw bytes to stdout. It works similarly to `pbpaste`, but that utility
 is limited to textual data.
