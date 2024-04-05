@@ -7,15 +7,11 @@ on:
     branches: [ "main" ]
 
 jobs:
-
   build:
     runs-on: macos-latest
-    
     steps:
     - uses: actions/checkout@v3
     - name: Compile Swift Code
-      run: |
-        swift build
+      run: swift build
     - name: Test Swift Code
-      run: |
-        swift test
+      run: swift test
