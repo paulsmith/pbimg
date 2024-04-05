@@ -44,6 +44,10 @@ this might cause your terminal to enter an odd state.
 pbimg [-f | --force]
 ```
 
+## Example
+
+https://github.com/paulsmith/pbimg/assets/1210/f00594fe-6be6-4f01-87ba-0195a2f8ec50
+
 ## Credit
 
 [Simon Willison](https://til.simonwillison.net/macos/impaste) for the idea.
