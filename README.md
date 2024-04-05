@@ -20,7 +20,16 @@ redirected.
 2. Compile the Swift code using the following command:
 
 ```sh
-swiftc pbimg.swift
+swift build
+```
+
+Then copy the build artifact `./.build/arm64-apple-macosx/debug/pbimg` to your
+$PATH.
+
+Example:
+
+```sh
+install -m 0755 ./.build/arm64-apple-macosx/debug/pbimg $HOME/.local/bin
 ```
 
 ## Usage

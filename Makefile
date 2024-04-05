@@ -1,7 +1,10 @@
-pbimg: pbimg.swift
-	swiftc -o $@ $<
+pbimg: Sources/main.swift
+	swift build
+
+test:
+	swift test
 
 clean:
-	rm -f pbimg
+	swift package clean
 
 .PHONY: clean
