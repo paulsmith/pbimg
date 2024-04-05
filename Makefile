@@ -1,7 +1,10 @@
 pbimg: Sources/main.swift
 	swift build
 
+test:
+	swift test
+
 clean:
-	rm -rf .build
+	swift package clean
 
 .PHONY: clean

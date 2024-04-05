@@ -54,7 +54,7 @@ func processClipboardImage(_ filePath: String?, pasteboard: PasteboardHandling =
         let outputPath = fileUrl.deletingPathExtension().appendingPathExtension(fileExtension).path
 
         do {
-            try imageData.write(to: URL(fileURLWithPath: outputPath))
+            try fileSystem.write(imageData, toPath: outputPath)
             print("Image data saved to: \(outputPath)")
         } catch {
             errorAndDie("Failed to save image data to: \(outputPath)")
