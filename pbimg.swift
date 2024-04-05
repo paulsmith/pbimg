@@ -14,20 +14,38 @@ func errorAndDie(_ message: String) {
 
 func processClipboardImage(_ filePath: String?) {
     let pasteboard = NSPasteboard.general
-    guard let data = pasteboard.data(forType: .tiff) ?? pasteboard.data(forType: .png) else {
+    var data: Data?
+    var fileExtension = "png"
+
+    if let tiffData = pasteboard.data(forType: .tiff),
+       let tiffRep = NSBitmapImageRep(data: tiffData) {
+        data = tiffRep.representation(using: .png, properties: [:])
+    } else if let pngData = pasteboard.data(forType: .png) {
+        data = pngData
+    }
+
+    guard let imageData = data else {
         errorAndDie("No image data found in the clipboard.")
         return
     }
 
     if let filePath = filePath {
+        let fileUrl = URL(fileURLWithPath: filePath)
+        let pathExtension = fileUrl.pathExtension.lowercased()
+        if pathExtension == "tiff" || pathExtension == "tif" {
+            fileExtension = "tiff"
+        }
+
+        let outputPath = fileUrl.deletingPathExtension().appendingPathExtension(fileExtension).path
+
         do {
-            try data.write(to: URL(fileURLWithPath: filePath))
-            print("Image data saved to: \(filePath)")
+            try imageData.write(to: URL(fileURLWithPath: outputPath))
+            print("Image data saved to: \(outputPath)")
         } catch {
-            errorAndDie("Failed to save image data to: \(filePath)")
+            errorAndDie("Failed to save image data to: \(outputPath)")
         }
     } else {
-        FileHandle.standardOutput.write(data)
+        FileHandle.standardOutput.write(imageData)
     }
 }
 

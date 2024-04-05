@@ -46,7 +46,46 @@ pbimg [-f | --force]
 
 ## Example
 
+For example, use the screenshot utility to copy a screenshot to the clipboard:
+`⌘`+`⌃`+`⇧`+`4`
+
+```sh
+pbimg output.png
+```
+
 https://github.com/paulsmith/pbimg/assets/1210/f00594fe-6be6-4f01-87ba-0195a2f8ec50
+
+### Convert format
+
+With ImageMagick (or GraphicsMagick) installed, convert between formats with a
+pipeline:
+
+```sh
+pbimg | convert - output.gif
+```
+
+```sh
+pbimg | convert - -quality 65 output.jpg
+```
+
+### Resize
+
+```sh
+pbimg | convert - -resize 25% thumbnail.png
+```
+
+### Get info about image on pasteboard
+
+```sh
+pbimg | identify -
+-=>/var/folders/mc/p59f_1dd1w9b9tfc1zc6f1gr0000gn/T/magick-7LMqLeLrxmEOVvX3zBqn_VF8y2ouyaVO PNG 3248x2080 3248x2080+0+0 8-bit sRGB 970964B 0.010u 0:00.000
+```
+
+### Upload to web service
+
+```sh
+pbimg | curl --data-binary @- https://example.com/upload
+```
 
 ## Credit
 
