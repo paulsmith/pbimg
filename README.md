@@ -53,7 +53,7 @@ For example, use the screenshot utility to copy a screenshot to the clipboard:
 pbimg output.png
 ```
 
-https://github.com/paulsmith/pbimg/assets/1210/f00594fe-6be6-4f01-87ba-0195a2f8ec50
+https://github.com/paulsmith/pbimg/assets/1210/8b3a32b4-33d8-4e5a-a9ec-cb67a5ed1681
 
 ### Convert format
 
