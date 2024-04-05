@@ -1,7 +1,8 @@
 # pbimg - Clipboard image saver
 
 A command-line application for macOS that saves the clipboard image to a file or
-outputs the raw bytes to stdout.
+outputs the raw bytes to stdout. It works similarly to `pbpaste`, but that utility
+is limited to textual data.
 
 ## How it works
 
@@ -42,6 +43,10 @@ this might cause your terminal to enter an odd state.
 ```sh
 pbimg [-f | --force]
 ```
+
+## Credit
+
+[Simon Willison](https://til.simonwillison.net/macos/impaste) for the idea.
 
 ## License
 
