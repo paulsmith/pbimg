@@ -31,3 +31,4 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./.build/arm64-apple-macosx/release/pbimg
         asset_name: pbimg
+        asset_content_type: application/octet-stream
