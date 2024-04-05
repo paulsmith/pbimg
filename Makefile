@@ -1,7 +1,7 @@
-pbimg: pbimg.swift
-	swiftc -o $@ $<
+pbimg: Sources/main.swift
+	swift build
 
 clean:
-	rm -f pbimg
+	rm -rf .build
 
 .PHONY: clean

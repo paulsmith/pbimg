@@ -7,13 +7,28 @@
 import Foundation
 import AppKit
 
+protocol PasteboardHandling {
+    func data(forType: NSPasteboard.PasteboardType) -> Data?
+}
+
+protocol FileSystemHandling {
+    func write(_ data: Data, toPath path: String) throws
+}
+
+extension NSPasteboard: PasteboardHandling {}
+
+class FileSystemHandler: FileSystemHandling {
+    func write(_ data: Data, toPath path: String) throws {
+        try data.write(to: URL(fileURLWithPath: path))
+    }
+}
+
 func errorAndDie(_ message: String) {
     fputs("\u{1B}[31mError: \(message)\u{1B}[0m\n", stderr)
     exit(1)
 }
 
-func processClipboardImage(_ filePath: String?) {
-    let pasteboard = NSPasteboard.general
+func processClipboardImage(_ filePath: String?, pasteboard: PasteboardHandling = NSPasteboard.general, fileSystem: FileSystemHandling = FileSystemHandler()) {
     var data: Data?
     var fileExtension = "png"
 
