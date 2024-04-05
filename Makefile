@@ -1,7 +1,7 @@
-impaste: impaste.swift
+pbimg: pbimg.swift
 	swiftc -o $@ $<
 
 clean:
-	rm -f impaste
+	rm -f pbimg
 
 .PHONY: clean

@@ -1,4 +1,4 @@
-// impaste - Save image data from the macOS clipboard to a file.
+// pbimg - Save image data from the macOS clipboard to a file.
 // 
 // Copyright (c) 2024 Paul Smith <paulsmith@pobox.com>
 // Licensed under the The "MIT No Attribution" (MIT-0) License

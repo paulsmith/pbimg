@@ -1,4 +1,4 @@
-# impaste - Clipboard image saver
+# pbimg - Clipboard image saver
 
 A command-line application for macOS that saves the clipboard image to a file or
 outputs the raw bytes to stdout.
@@ -19,7 +19,7 @@ redirected.
 2. Compile the Swift code using the following command:
 
 ```sh
-swiftc impaste.swift
+swiftc pbimg.swift
 ```
 
 ## Usage
@@ -27,20 +27,20 @@ swiftc impaste.swift
 To save the clipboard image to a file:
 
 ```sh
-impaste <file_path>
+pbimg <file_path>
 ```
 
 To output the raw bytes of the clipboard image to stdout:
 
 ```sh
-impaste > <file_path>
+pbimg > <file_path>
 ```
 
 To force output the raw bytes to stdout even if stdout is a terminal. Note that
 this might cause your terminal to enter an odd state.
 
 ```sh
-impaste [-f | --force]
+pbimg [-f | --force]
 ```
 
 ## License
